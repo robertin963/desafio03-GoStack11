@@ -17,14 +17,12 @@ function App() {
       url: 'http://urldeteste.com.br',
       techs: "vuejs,  react js"
     });
-    console.log(repository.data)
 
     setRepositories([...repositories, repository.data])
   }
 
   async function handleRemoveRepository(id) {
     const repositoryId = repositories.findIndex(rep => rep.id === id);
-    console.log(repositoryId);
 
     await api.delete(`/repositories/${id}`);
 
